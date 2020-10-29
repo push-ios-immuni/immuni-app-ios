@@ -183,7 +183,7 @@ public struct Configuration: Codable {
     riskReminderNotificationPeriod: TimeInterval = 86400,
     exposureDetectionPeriod: TimeInterval = 14400,
     exposureConfiguration: ExposureDetectionConfiguration = .init(),
-    exposureInfoMinimumRiskScore: Int = 20,
+    exposureInfoMinimumRiskScore: Int = 12,
     maximumExposureDetectionWaitingTime: TimeInterval = 86400,
     privacyNoticeURL: [String: URL] = .defaultPrivacyNoticeURL,
     termsOfUseURL: [String: URL] = .defaultTermsOfUseURL,
@@ -285,7 +285,7 @@ public extension Configuration {
     /// Public initializer to allow testing
     public init(
       attenuationThresholds: [Int] = [50, 70],
-      attenuationBucketScores: [UInt8] = [0, 5, 5, 5, 5, 5, 5, 5],
+      attenuationBucketScores: [UInt8] = [0, 0, 3, 3, 3, 3, 3, 3],
       attenuationWeight: Double = 1,
       daysSinceLastExposureBucketScores: [UInt8] = [1, 1, 1, 1, 1, 1, 1, 1],
       daysSinceLastExposureWeight: Double = 1,
